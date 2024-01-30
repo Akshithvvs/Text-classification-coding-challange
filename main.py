@@ -20,8 +20,8 @@ gl_loader = {}
 
 @app.on_event('startup')
 def load_model():
-    gl_loader['logestic_model'] = load('logReg.pkl')
-    gl_loader['vectorizer'] = load('tfidf_vectorizer.pkl')
+    gl_loader['logestic_model'] = load('Ml/logReg.pkl')
+    gl_loader['vectorizer'] = load('Ml/tfidf_vectorizer.pkl')
 
 @app.post("/logistics")
 def logisticreg(data: InputModel) :
