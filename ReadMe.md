@@ -20,6 +20,7 @@ The entire project structure is described as well as displayed below.
 │       logreg.ipynb        -  Logistic regression model file 
 │       sample_data.csv 
 │       Svm.ipynb           - SVM model file
+│       preprocessor.py     - Reusable preprocessing funtions
 │
 ├───UI
 │       front-end.html      - simple html file
