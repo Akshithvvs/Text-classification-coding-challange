@@ -61,6 +61,7 @@ docker run -p 8000:8000 {image_name}
 
 
 __logisticreg__
+
 Arguments :
 - new_data - list[str]
 
@@ -68,6 +69,7 @@ Returns :
 - {predictions : List[str]}
 
 __default_func__
+
 Arguments :
 - N.A.
 
