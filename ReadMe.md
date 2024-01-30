@@ -51,6 +51,29 @@ docker run -p 8000:8000 {image_name}
 
 ![output](/images/output.png)
 
+## API Documentation
+
+| Name         | Method              | API                             | Description                                     |
+|--------------|---------------------|---------------------------------|-------------------------------------------------|
+| logisticreg  | POST                | http://127.0.0.1:8000/logistics | Predicts labels using logistic regression model |
+| default_func | GET                 | http://127.0.0.1:8000/          | Default function to check the server is up      |
+
+
+
+__logisticreg__
+Arguments :
+- new_data - list[str]
+
+Returns :
+- {predictions : List[str]}
+
+__default_func__
+Arguments :
+- N.A.
+
+Returns :
+- { "Hello" : "World" }
+
 ## Future Scope
 
 Currently working on integrating different text embeddings for text classification instead of TF-IDF Vectorization, which was also part of the requirements as an optional / plus feature. If time allows this could also be completed by time.
