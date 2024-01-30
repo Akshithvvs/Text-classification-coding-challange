@@ -1,8 +1,10 @@
-from fastapi import Body, FastAPI
+from fastapi import Body, FastAPI, HTTPException
 from pydantic import BaseModel
 from typing import List
 from fastapi.middleware.cors import CORSMiddleware
 from joblib import load
+from Ml.preprocessor import has_chinese_pattern
+
 
 class InputModel(BaseModel):
     new_data: List[str]
@@ -25,11 +27,16 @@ def load_model():
 
 @app.post("/logistics")
 def logisticreg(data: InputModel) :
-    if data is not None: 
-        new_data_tfidf = gl_loader['vectorizer'].transform(data.new_data)
-        predictions = gl_loader['logestic_model'].predict(new_data_tfidf)
-        print(predictions)
-    
+    if data is not None:
+        has_chinese = any(has_chinese_pattern(item) for item in data.new_data)
+        print(has_chinese)
+        if not has_chinese:
+            new_data_tfidf = gl_loader['vectorizer'].transform(data.new_data)
+            predictions = gl_loader['logestic_model'].predict(new_data_tfidf)
+            print(predictions)
+        else:
+            raise HTTPException(status_code=400, detail="Bad Request: Invalid text found")
+        
     return {
         "predictions": predictions.tolist(),
     }

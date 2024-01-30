@@ -50,4 +50,4 @@ docker run -p 8000:8000 {image_name}
 
 ## Future Scope
 
-Currently working on integrating CNN for text classification, which was also part of the requirements as an optional / plus feature. If time allows this could also be completed by time.
+Currently working on integrating different text embeddings for text classification instead of TF-IDF Vectorization, which was also part of the requirements as an optional / plus feature. If time allows this could also be completed by time.
