@@ -7,6 +7,7 @@ SVMs perform well when the data is linearly separable, and their goal is to loca
 
 ## Project Structure
 
+For the project to execute as required, the dataset(csv file) has to be uploaded within "ML/" folder(as shown in the project structure) and also the name of the file should be "sample_data.csv".
 The entire project structure is described as well as displayed below.
 
 ```
@@ -18,7 +19,7 @@ The entire project structure is described as well as displayed below.
 │
 ├───Ml
 │       logreg.ipynb        -  Logistic regression model file 
-│       sample_data.csv 
+│       sample_data.csv     - The csv does not exist.
 │       Svm.ipynb           - SVM model file
 │       preprocessor.py     - Reusable preprocessing funtions
 │
