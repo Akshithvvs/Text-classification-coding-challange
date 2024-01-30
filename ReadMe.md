@@ -23,7 +23,7 @@ The entire project structure is described as well as displayed below.
 │       preprocessor.py     - Reusable preprocessing funtions
 │
 ├───UI
-│       front-end.html      - simple html file
+│       front-end.html      - html file for manual testing
 ├───images
 │       output.png          - example of the frontend view
 
@@ -40,6 +40,8 @@ docker run -p 8000:8000 {image_name}
 ```
 
 - Once the server is up try localhost:8000, this will return {Hello: World}. Proving that the image is up and running
+
+- Now open the 'UI/front-end.html' file to test the strings manually
 
 ### How to use the frontend
 

@@ -20,11 +20,14 @@ app.add_middleware(
 
 gl_loader = {}
 
+# Model is initialised once the server is up and runnung
 @app.on_event('startup')
 def load_model():
     gl_loader['logestic_model'] = load('Ml/logReg.pkl')
     gl_loader['vectorizer'] = load('Ml/tfidf_vectorizer.pkl')
 
+
+# Api defined to predict the labels of passed string using Logistic Regression Model
 @app.post("/logistics")
 def logisticreg(data: InputModel) :
     if data is not None:
@@ -41,6 +44,7 @@ def logisticreg(data: InputModel) :
         "predictions": predictions.tolist(),
     }
 
+# Default API to check if the server is running
 @app.get("/")
 def default_func():
     return {"Hello": "World"}
